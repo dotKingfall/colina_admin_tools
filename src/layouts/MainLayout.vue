@@ -1,8 +1,9 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
+    <q-header bordered>
+      <q-toolbar class="bg-secondary">
         <q-btn
+          class="text-primary navigation-mobile"
           flat
           dense
           round
@@ -11,32 +12,31 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title>
-          Quasar App
+        <q-toolbar-title shrink class="title-desktop q-pa-none">
+          <q-btn flat color="primary" @click="() => redirectTo('/')">
+            PÁGINA PRINCIPAL
+          </q-btn>
+        </q-toolbar-title>
+        <q-separator vertical inset style="margin-right: 10px; margin-left: 10px;" class="bg-primary separator-desktop" />
+        <div class="navigation-desktop">
+          <q-btn class="text-primary" flat @click="() => redirectTo('indicacoes')">
+            INDICAÇÕES
+          </q-btn>
+        </div>
+
+        <q-toolbar-title class="title-mobile text-primary">
+          ESTACA COLINA
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <AuthButtons />
       </q-toolbar>
     </q-header>
 
     <q-drawer
       v-model="leftDrawerOpen"
-      show-if-above
       bordered
     >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in linksList"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
+      <DrawerCards :redirectTo="redirectTo" />
     </q-drawer>
 
     <q-page-container>
@@ -45,58 +45,25 @@
   </q-layout>
 </template>
 
+<style>
+  @import '../css/MainLayout.scss'
+</style>
+
 <script setup lang="ts">
 import { ref } from 'vue';
-import EssentialLink, { type EssentialLinkProps } from 'components/EssentialLink.vue';
-
-const linksList: EssentialLinkProps[] = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-];
+import { useRouter } from 'vue-router';
+import AuthButtons from 'components/AuthButtons.vue'
+import DrawerCards from 'src/components/DrawerCards.vue';
 
 const leftDrawerOpen = ref(false);
+const router = useRouter();
 
 function toggleLeftDrawer () {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
+
+async function redirectTo(path: string){
+  await router.push(path);
+}
+
 </script>

@@ -1,0 +1,22 @@
+.navigation-mobile, .title-mobile{
+  display: none;
+}
+
+.title-mobile{
+  font-family: "robotoCondensed", serif;
+  font-optical-sizing: auto;
+}
+
+.navigation-desktop{
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 480px){
+  .navigation-mobile, .title-mobile{
+    display: initial;
+  }
+
+  .title-desktop, .navigation-desktop, .separator-desktop{
+    display: none;
+  }
+}
