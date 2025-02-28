@@ -1,7 +1,7 @@
 <template>
   <q-btn-group>
-    <q-btn-dropdown auto-close label="Entrar" split class="bg-primary" @click="redirectLoginPage">
-      <q-item clickable>
+    <q-btn-dropdown auto-close label="Entrar" split class="bg-primary" @click="() => props.redirectTo && props.redirectTo('login', props.indexEntrar)">
+      <q-item clickable @click="() => props.redirectTo && props.redirectTo('convidado', props.indexConvidado)">
         <div class="q-mx-auto flex flex-center">Convidado</div>
       </q-item>
     </q-btn-dropdown>
@@ -9,10 +9,11 @@
 </template>
 
 <script setup lang="ts">
-  import { useRouter } from 'vue-router';
-  const router = useRouter();
+  import { defineProps } from 'vue';
 
-  async function redirectLoginPage(){
-    await router.push('login');
-  }
+  const props = defineProps({
+    redirectTo: Function,
+    indexEntrar: Number,
+    indexConvidado: Number,
+  });
 </script>
