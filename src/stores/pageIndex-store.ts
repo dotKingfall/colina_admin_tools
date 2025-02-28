@@ -1,4 +1,4 @@
-import { defineStore, acceptHMRUpdate } from 'pinia';
+import { defineStore } from 'pinia';
 
 export const usePageIndexStore = defineStore('page', {
   state: () => ({
@@ -15,7 +15,3 @@ export const usePageIndexStore = defineStore('page', {
     }
   }
 });
-
-if (import.meta.hot) {
-  import.meta.hot.accept(acceptHMRUpdate(usePageIndexStore, import.meta.hot));
-}

@@ -1,43 +1,54 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
+  <q-page>
+    <main>
+      <div className="introduction text-center">
+        <div className="stake-title">Estaca Maceió Brasil Colina</div>
+        <div className='description'>Ferramentas Administrativas</div>
+        <div className='text-secondary_accent'>Para continuar, entre com seu usuário ou use o acesso de convidado!</div>
+      </div>
+    </main>
   </q-page>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue';
-import type { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/ExampleComponent.vue';
-
-const todos = ref<Todo[]>([
-  {
-    id: 1,
-    content: 'ct1'
-  },
-  {
-    id: 2,
-    content: 'ct2'
-  },
-  {
-    id: 3,
-    content: 'ct3'
-  },
-  {
-    id: 4,
-    content: 'ct4'
-  },
-  {
-    id: 5,
-    content: 'ct5'
+<style scoped lang="scss">
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 4vh;
   }
-]);
 
-const meta = ref<Meta>({
-  totalCount: 1200
-});
-</script>
+  .introduction{
+    font-family: 'robotoCondensed';
+    font-optical-sizing: auto;
+  }
+
+  .stake-title{
+    color: $primary;
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+
+  .description{
+    color: $secondary_accent;
+    font-size: 1.7rem;
+    line-height: 1.5;
+    padding-bottom: 20px;
+  }
+
+  .next-step{
+    padding-left: 5vh;
+    padding-right: 5vh;
+  }
+
+  @media screen and (max-width: 480px){
+    .stake-title{
+      font-size: 2rem;
+    }
+
+    .description{
+      font-size: 1.5rem;
+    }
+  }
+
+</style>

@@ -20,7 +20,7 @@
 </style>
 
 <script setup lang="ts">
-  import { computed, defineProps } from 'vue';
+  import { computed } from 'vue';
   import { usePageIndexStore } from 'src/stores/pageIndex-store';
 
   const pageIndexStore = usePageIndexStore();

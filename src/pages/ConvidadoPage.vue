@@ -1,5 +1,7 @@
 <template>
-  <div>
-    guest
-  </div>
+  <q-page>
+    <div>
+      guest
+    </div>
+  </q-page>
 </template>
