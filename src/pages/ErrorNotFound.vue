@@ -9,9 +9,9 @@
         color="white"
         text-color="primary"
         unelevated
-        to="/"
         label="PÁGINA PRINCIPAL"
         no-caps
+        @click="redirectToHome"
       />
     </div>
   </div>
@@ -31,5 +31,14 @@
 </style>
 
 <script setup lang="ts">
-//
+  import { usePageIndexStore } from 'src/stores/pageIndex-store';
+  import { useRouter } from 'vue-router';
+
+  const router = useRouter();
+  const pageIndexStore = usePageIndexStore();
+
+  async function redirectToHome(){
+    await router.push('/');
+    pageIndexStore.setPageIndex(0);
+  }
 </script>

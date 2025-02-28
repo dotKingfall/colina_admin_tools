@@ -72,7 +72,6 @@ function toggleLeftDrawer () {
 async function redirectTo(path: string, index: number){
   await router.push(path);
   pageIndexStore.setPageIndex(index);
-  console.log(pageIndexStore.currentPageIndex)
 }
 
   const components_mobile = [
