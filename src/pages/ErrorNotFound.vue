@@ -1,26 +1,34 @@
 <template>
-  <div class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center">
+  <div class="fullscreen bg-primary text-white text-center q-pa-md flex flex-center">
     <div>
-      <div style="font-size: 30vh">
-        404
+      <div class="text-center not-found-title">
+        PÁGINA NÃO EXISTE.
       </div>
-
-      <div class="text-h2" style="opacity:.4">
-        Oops. Nothing here...
-      </div>
-
       <q-btn
         class="q-mt-xl"
         color="white"
-        text-color="blue"
+        text-color="primary"
         unelevated
         to="/"
-        label="Go Home"
+        label="PÁGINA PRINCIPAL"
         no-caps
       />
     </div>
   </div>
 </template>
+
+<style>
+  .not-found-title{
+    font-size: 10vh;
+    font-family: 'robotoCondensed';
+  }
+
+  @media screen and (max-width: 480px){
+    .not-found-title{
+      font-size: 10vw;
+    }
+  }
+</style>
 
 <script setup lang="ts">
 //
