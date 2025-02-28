@@ -1,7 +1,5 @@
 <template>
   <q-page>
-    <div>
-      guest
-    </div>
+    <div>AUTH HOME</div>
   </q-page>
 </template>

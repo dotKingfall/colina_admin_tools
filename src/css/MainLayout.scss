@@ -1,3 +1,5 @@
+@import './quasar.variables.scss';
+
 .navigation-mobile, .title-mobile{
   display: none;
 }
@@ -17,7 +19,6 @@
   font-size: 2em;
   
   padding-top: 10px;
-  padding-bottom: 5px;
 }
 
 .drawer-links{
@@ -27,6 +28,10 @@
   margin-bottom: 5px;
 }
 
+.show-user-name{
+  display: none;
+}
+
 @media screen and (max-width: 480px){
   .navigation-mobile, .title-mobile{
     display: initial;
@@ -34,5 +39,15 @@
 
   .title-desktop, .navigation-desktop, .separator-desktop{
     display: none;
+  }
+
+  .show-user-name{
+    display: flex;
+    color: white;
+    background-color: $primary;
+    padding-left: 10px;
+    font-family: 'robotoCondensed';
+    font-size: 1.3em;
+    padding-bottom: 5px;
   }
 }

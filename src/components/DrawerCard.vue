@@ -31,17 +31,20 @@
 
 <script setup lang="ts">
   import { computed } from 'vue';
+  import type { User } from '@supabase/supabase-js';
   import { usePageIndexStore } from 'src/stores/pageIndex-store';
 
   const pageIndexStore = usePageIndexStore();
 
-  const props = defineProps({
-    redirectTo: Function,
-    index: Number,
-    path: String,
-    label: String,
-    iconName: String,
-  });
+  const props = defineProps<{
+    redirectTo: (type: string, index: number) => void;
+    index: number;
+    path: string;
+    label: string;
+    iconName: string;
+    currentUser: User | null;
+
+  }>();
 
   const cardClass = computed(() => {
     return {
