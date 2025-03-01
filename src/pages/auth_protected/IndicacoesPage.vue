@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page class="bg-secondary">
     <div class="abc">
       indicações
     </div>

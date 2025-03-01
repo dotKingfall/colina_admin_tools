@@ -30,7 +30,7 @@
   watch(session, async (existingSession) => {
     if(existingSession){
       await router.push('home');
-      pageIndexStore.setPageIndex(3);
+      pageIndexStore.setPageIndex(0);
     }
   })
 

@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page class="bg-secondary">
     <div class="form-outline q-mx-auto">
       <div class="page-title text-primary">ENTRAR</div>
       <q-form @submit.prevent="handleLogin">

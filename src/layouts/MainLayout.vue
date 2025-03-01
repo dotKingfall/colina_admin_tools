@@ -90,7 +90,7 @@ const mainPath = '/';
     { name: DrawerCard, props: {
       redirectTo,
       label: 'INDICAÇÕES',
-      index: 4,
+      index: 2,
       path: 'indicacoes',
       iconName: 'ion-chatbubbles',
       currentUser: userStore.user ? userStore.user : null,
@@ -102,7 +102,7 @@ const mainPath = '/';
       name: BarCard, props: {
         redirectTo,
         label: 'INDICAÇÕES',
-        index: 4,
+        index: 3,
         path: 'indicacoes',
         currentUser: userStore.user ? userStore.user : null,
       } },

@@ -16,6 +16,7 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 4vh;
+    background-color: $secondary;
   }
 
   .introduction{
