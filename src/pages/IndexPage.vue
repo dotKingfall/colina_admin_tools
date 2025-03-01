@@ -4,7 +4,7 @@
       <div className="introduction text-center">
         <div className="stake-title">Estaca Maceió Brasil Colina</div>
         <div className='description'>Ferramentas Administrativas</div>
-        <div className='text-secondary_accent'>Para continuar, entre com seu usuário ou use o acesso de convidado!</div>
+        <q-btn label="CALENDÁRIO" color="primary" @click="redirectTo('calendario', 2)"></q-btn>
       </div>
     </main>
   </q-page>
@@ -51,5 +51,17 @@
       font-size: 1.5rem;
     }
   }
-
 </style>
+
+<script setup lang="ts">
+  import { useRouter } from 'vue-router';
+  import { usePageIndexStore } from 'src/stores/pageIndex-store';
+
+  const router = useRouter();
+  const pageIndexStore = usePageIndexStore();
+
+  async function redirectTo(path: string, index: number){
+    await router.push(path);
+    pageIndexStore.setPageIndex(index);
+  }
+</script>

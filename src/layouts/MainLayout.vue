@@ -85,16 +85,18 @@ const mainPath = '/';
       path: userStore.user !== null ? 'home' : '/',
       iconName: 'ion-home',
       currentUser: userStore.user ? userStore.user : null,
-     } },
+     }
+    },
 
     { name: DrawerCard, props: {
       redirectTo,
       label: 'INDICAÇÕES',
-      index: 2,
+      index: 3,
       path: 'indicacoes',
       iconName: 'ion-chatbubbles',
       currentUser: userStore.user ? userStore.user : null,
-     } },
+     }
+    },
   ];
 
   const components_desktop = [
@@ -105,7 +107,8 @@ const mainPath = '/';
         index: 3,
         path: 'indicacoes',
         currentUser: userStore.user ? userStore.user : null,
-      } },
+      }
+    },
   ];
 
 </script>
