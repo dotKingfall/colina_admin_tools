@@ -66,13 +66,13 @@
 </style>
 
 <script setup lang="ts">
-  import { useQuasar } from 'quasar'
-  import { ref } from 'vue'
-  import { supabase } from '../supabase/supabase'
+  import { useQuasar } from 'quasar';
+  import { ref } from 'vue';
+  import { supabase } from '../supabase/supabase';
 
   const $q = useQuasar();
-  const email = ref('');
-  const password = ref('');
+  const email = ref();
+  const password = ref();
   const passwordFieldType = ref<'password' | 'text'>('password');
   const isLoading = ref(false);
 
@@ -118,7 +118,7 @@
       console.log("Welcome!");
       showToast(200);
     }
-    catch(e: unknown){
+    catch(e){
       if(e instanceof Error){
         console.log(e.message);
         showToast(400);
